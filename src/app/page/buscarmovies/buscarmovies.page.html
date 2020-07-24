@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button text="atras" defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-searchbar [(ngModel)]="peli" color="medium" (keyup.enter)="getMovie()"></ion-searchbar>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+      <ion-item href="#" *ngFor="let item of listMovies"  routerLink="/home" detail>
+        <ion-label>
+        {{item.original_title}}
+        </ion-label>
+        <ion-chip>{{item.popularity}}</ion-chip>
+        <ion-thumbnail slot="start" *ngIf="item.poster_path==null">
+          <img src="assets/img/fondo.jpg">
+        </ion-thumbnail>
+        <ion-thumbnail slot="start" *ngIf="item.poster_path">
+          <img src="https://image.tmdb.org/t/p/original/{{item.poster_path}}">
+        </ion-thumbnail>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="getMovie($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="dots"
+      loadingText="Ver mas ...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
