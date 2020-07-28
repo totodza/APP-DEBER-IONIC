@@ -20,6 +20,9 @@
     <ion-card-content>
       {{detailMovies.overview}}
     </ion-card-content>
+    <ion-item *ngIf="detailMovies.video==true">
+            <ion-button fill="outline" slot="end" href="https://www.youtube.com/">View</ion-button>
+        </ion-item>
   </ion-card>
 </ion-content>
 
