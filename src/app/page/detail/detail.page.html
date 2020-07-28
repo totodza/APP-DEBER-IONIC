@@ -1,0 +1,28 @@
+
+  <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" text="back" defaultHref="/buscarmovies" icon="planet" ></ion-back-button>
+  </ion-buttons>
+    <ion-title>Detalle  de la pelicula </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <img height="400" width="100%" src="https://image.tmdb.org/t/p/original/{{detailMovies.poster_path}}">
+  
+    <ion-card-header>
+      <ion-card-subtitle><ion-chip color="link"    *ngFor="let item of detailMovies.genres">{{item.name}}</ion-chip> </ion-card-subtitle>
+      <ion-card-title>{{detailMovies.original_title}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{detailMovies.overview}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+
+
+

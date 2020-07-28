@@ -11,7 +11,7 @@ export class BuscarmoviesPage implements OnInit {
   peli:string;
   numberPage:number=1;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
-//injector de dependencias
+ //injector de dependencias
   constructor(private themoviedbService:ThemoviedbService) { }
   //componentes:Componente[]=[
     //{

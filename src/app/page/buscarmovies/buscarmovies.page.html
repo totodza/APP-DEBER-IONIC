@@ -8,7 +8,7 @@
 </ion-header>
 <ion-content>
   <ion-list>
-      <ion-item href="#" *ngFor="let item of listMovies"  routerLink="/home" detail>
+      <ion-item [routerLink]="['/detail',item.id]"  *ngFor="let item of listMovies"  >
         <ion-label>
         {{item.original_title}}
         </ion-label>
