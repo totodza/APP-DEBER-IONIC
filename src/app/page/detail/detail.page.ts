@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemoviedbService } from '../../service/themoviedb.service';
 import {ActivatedRoute} from '@angular/router';
+
 @Component({
   selector: 'app-detail',
   templateUrl: './detail.page.html',
@@ -9,20 +10,33 @@ import {ActivatedRoute} from '@angular/router';
 export class  DetailPage  implements OnInit {
   detailMovies: any = [];
   idMovie: string;
+  video: any = [];
 
   constructor(private  themoviedbService:ThemoviedbService,
-                      private router: ActivatedRoute) { }
+                      private router: ActivatedRoute) 
+                      { }
 
   ngOnInit() {
     this.idMovie=this.router.snapshot.paramMap.get('id');
     this.getDetailMovie();
+    this.getVideo();
   
   }
+  
 
 getDetailMovie(){
   this.themoviedbService.getMoviesDetail(this.idMovie).then(data =>{    
     this.detailMovies=data;
   }).catch(error=>{
+
+  })
+}
+getVideo() {
+  this.themoviedbService.TraerVideo(this.idMovie).then(data => {
+  
+    this.video.push(data["results"][0]);
+   
+  }).catch(error => {
 
   })
 }
