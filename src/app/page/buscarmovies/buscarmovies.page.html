@@ -3,6 +3,7 @@
     <ion-buttons slot="start">
         <ion-back-button text="atras" defaultHref="/"></ion-back-button>
     </ion-buttons>
+    
     <ion-searchbar [(ngModel)]="peli" (keyup.enter)="getMovie()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
@@ -27,4 +28,5 @@
       loadingText="Ver mas ...">
     </ion-infinite-scroll-content>
   </ion-infinite-scroll>
+  
 </ion-content>
