@@ -3,10 +3,10 @@
     <ion-buttons slot="start">
         <ion-back-button text="atras" defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-searchbar [(ngModel)]="peli" animated color="warning" (keyup.enter)="getMovie()"></ion-searchbar>
+    <ion-searchbar [(ngModel)]="peli" (keyup.enter)="getMovie()"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
-<ion-content>
+<ion-content animated color="light">
   <ion-list>
       <ion-item [routerLink]="['/detail',item.id]"  *ngFor="let item of listMovies"  >
         <ion-label>

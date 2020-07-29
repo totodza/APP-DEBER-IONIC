@@ -1,11 +1,11 @@
 ion-searchbar
     {
         margin-bottom: 10px;
+        padding-top: 5px;
         margin-top: 5px;
         color:rgb(12, 10, 6);
         --border-radius:10px;
-        --placeholder-colo:black;
-
+        --placeholder-color:black;
     }
     ion-title
     {
@@ -16,5 +16,9 @@ ion-searchbar
         --background:#c7b198;
     }
     ion-toolbar{
-        --background:#c7b198;
+        --background:#ebecf1
+    }
+    ion-back-button{
+        padding-top: 8px;
+        color: black ;
     }
