@@ -25,10 +25,24 @@
 
       <ion-card-title>
         {{detailMovies.original_title}}
+        <ion-icon name="star-outline" color ="warning"></ion-icon>
       </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      {{detailMovies.overview}}
+      {{detailMovies.overview}} <ion-icon (click)="verComent()" style="font-size:18px  !important"  slot="end" name="chatbubble-ellipses-outline"></ion-icon>
+    
+      <div *ngIf="verComentario">
+        <ion-item>
+          <ion-label position="floating">Nombre</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Descripcion</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+
+        <ion-button type=""> Enviar</ion-button>
+      </div>
     </ion-card-content>
     <ion-item *ngIf="detailMovies.video==true">
     </ion-item>

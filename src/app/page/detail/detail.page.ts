@@ -11,6 +11,7 @@ export class  DetailPage  implements OnInit {
   detailMovies: any = [];
   idMovie: string;
   video: any = [];
+  verComentario:boolean= false;
 
   constructor(private  themoviedbService:ThemoviedbService,
                       private router: ActivatedRoute) 
@@ -37,11 +38,19 @@ getVideo() {
     this.video.push(data["results"][0]);
    
   }).catch(error => {
+    
 
   })
 }
+  verComent(){
+    this.verComentario=!this.verComentario;
+    ;
 
 }
+
+}
+
+
 
 
 
