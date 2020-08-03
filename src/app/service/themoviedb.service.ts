@@ -15,6 +15,7 @@ export class ThemoviedbService {
     let url = 'https://api.themoviedb.org/3/search/movie?api_key=8e2341cf4820cf506fc303f1afd1f90c&language=en-US&query=' + nameMovie + '&page=' + page + '&include_adult=false';
     return new Promise((resolve, reject) => {
       this.http.get(url).subscribe(res => {
+      
         resolve(res);
       }), error => {
         reject(error);
@@ -43,7 +44,7 @@ export class ThemoviedbService {
           resolve(salida);
 
         }, error => {
-          debugger
+   
           reject(error);
         });
 
