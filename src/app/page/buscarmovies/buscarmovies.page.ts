@@ -1,7 +1,7 @@
 import { Component, OnInit ,ViewChild  } from '@angular/core';
 import { ThemoviedbService}  from './../../service/themoviedb.service'
 import { IonInfiniteScroll } from '@ionic/angular';
-
+import { AuthService} from "../../service/auth.service"
 @Component({
   selector: 'app-buscarmovies',
   templateUrl: './buscarmovies.page.html',
@@ -12,14 +12,15 @@ export class BuscarmoviesPage implements OnInit {
   numberPage:number=1;
   @ViewChild(IonInfiniteScroll) infiniteScroll: IonInfiniteScroll;
  //injector de dependencias
-  constructor(private themoviedbService:ThemoviedbService) { }
+  constructor(private themoviedbService:ThemoviedbService,
+    public authservice:AuthService) { }
   //componentes:Componente[]=[
     //{
     //icon:'america-football',
     ////
     //
 //  }]
-  
+
   
   listMovies:any= [];
   nombrebusqueda:string;
@@ -53,6 +54,10 @@ export class BuscarmoviesPage implements OnInit {
   toggleInfiniteScroll() {
     this.infiniteScroll.disabled = !this.infiniteScroll.disabled;
   }
+  Onlogout(){
+    this.authservice.logout();
+  
+    }
 }
 
 

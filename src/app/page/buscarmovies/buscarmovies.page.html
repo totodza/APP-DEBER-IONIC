@@ -1,7 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-buttons slot="start">
-        <ion-back-button text="atras" defaultHref="/"></ion-back-button>
+     
+        <!-- <ion-back-button text="atras" defaultHref="/"></ion-back-button> -->
+        <ion-button class="elmo" (click)="Onlogout()">Salir</ion-button>
     </ion-buttons>
     
     <ion-searchbar [(ngModel)]="peli" (keyup.enter)="getMovie()"></ion-searchbar>
