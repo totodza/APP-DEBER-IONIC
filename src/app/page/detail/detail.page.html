@@ -9,7 +9,9 @@
     <ion-title>Detalle de la pelicula </ion-title>
   </ion-toolbar>
 </ion-header>
-
+  <ng-template #pajarita > 
+    <ion-label class="goku" position="floating">Sin descripción</ion-label>
+  </ng-template>
 <ion-content>
   <ion-card>
     <ion-card-header>
@@ -20,15 +22,20 @@
         src="https://image.tmdb.org/t/p/original/{{detailMovies.poster_path}}">
       </ion-img>
       <ion-card-subtitle>
-        <ion-chip color="link" *ngFor="let item of detailMovies.genres">{{item.name}}</ion-chip>
+        <ion-chip color="link" *ngFor="let item of detailMovies.genres">{{item.name |uppercase}} </ion-chip>
+        
       </ion-card-subtitle>
 
       <ion-card-title>
         {{detailMovies.original_title}}
         <ion-icon name="star-outline" color ="warning"></ion-icon>
       </ion-card-title>
+      <ion-label> 
+        <br>
+      {{detailMovies.release_date | date: 'fullDate'}}
+      </ion-label>
     </ion-card-header>
-    <ion-card-content>
+    <ion-card-content *ngIf="detailMovies.overview  else pajarita">
       {{detailMovies.overview}} <ion-icon (click)="verComent()" style="font-size:18px  !important"  slot="end" name="chatbubble-ellipses-outline"></ion-icon>
     
       <div *ngIf="verComentario">
