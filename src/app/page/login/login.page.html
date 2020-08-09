@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ion-content>
 
   <div class="container">
@@ -37,3 +38,36 @@
   </div>
 
 </ion-content>
+=======
+<ion-header>
+  <ion-toolbar  color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="atras" defaultHref="/home"></ion-back-button>
+  </ion-buttons>
+    <ion-title text-center> Inicio de sesión</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+  <img class="icon" src="assets/icon/favicon.png" alt="">
+<ion-item>
+  <ion-label position ="floating">Correo</ion-label>
+  <ion-input type="text" [(ngModel)]="email" name ="email"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label position ="floating">contraseña</ion-label>
+  <ion-input  [(ngModel)]="password" type="password" name ="password"></ion-input>
+</ion-item>
+<br>
+<ion-button (click)="onSubmitLogin()"   expand="block">Entrar</ion-button>
+<ion-button   expand="block">Salir</ion-button>
+
+
+</ion-content>
+
+
+
+>>>>>>> 156680b3db1812c5ce60020419336f513082fb4c
