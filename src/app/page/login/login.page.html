@@ -1,0 +1,39 @@
+<ion-content>
+
+  <div class="container">
+
+    <div class="header">
+      <div class="title">
+        <img src="https://image.flaticon.com/icons/png/512/149/149071.png">
+      </div>
+      <h3>Welcome!</h3>
+      <p>Sign up to get an account</p>
+    </div>
+
+    <div class="body">
+
+      <ion-list>
+
+        <ion-item>
+          <ion-icon slot="start" name="at"></ion-icon>
+          <ion-input placeholder="Email" [(ngModel)]="mail"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="lock"></ion-icon>
+          <ion-input placeholder="Password" [(ngModel)]="pas"></ion-input>
+        </ion-item>
+
+        <ion-button expand="block" (click)="logeop()" routerLink="/buscarmovies">ingresar</ion-button>
+      </ion-list>
+    </div>
+
+<!----
+    <div class="footer">
+      Don't have an account? &nbsp; <a routerLink="/home">Sign In</a>
+    </div>
+    -->
+
+  </div>
+
+</ion-content>
